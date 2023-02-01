@@ -3,7 +3,10 @@ import { useRouter } from 'next/router'
 
 const GET_WATCH = gql`
     query GetProduct($id: ID!) {
-        product(id: $id, channel: "default-channel") {
+        product(
+            id: $id,
+            channel: "default-channel"
+        ) {
             id
             name
         }
