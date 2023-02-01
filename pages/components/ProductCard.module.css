@@ -1,0 +1,15 @@
+.productCard {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fafafa;
+    margin: 20px;
+    padding: 20px;
+}
+
+.productCardImage {
+    width: 100%;
+    height: auto;
+}

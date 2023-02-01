@@ -1,0 +1,5 @@
+.productItem {
+    flex-basis: 25%;
+    min-width: 25%;
+    justify-content: space-between;
+}

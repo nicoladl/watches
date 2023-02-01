@@ -1,0 +1,8 @@
+.productId {
+    font-family: var(--watches-font);
+    font-weight: 400;
+    color: #77777a;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding-top: 10px;
+}

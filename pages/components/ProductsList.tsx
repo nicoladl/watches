@@ -1,18 +1,19 @@
 import {INode, IProducts} from "@/pages/Interfaces/IProduct";
 import { ProductsListItem } from "@/pages/components/ProductsListItem";
+import styles from './ProductsList.module.css'
 
 export const ProductsList = ({ products }: IProducts) => {
     return (
-        <ul>
+        <ul className={styles.list}>
             {products.map(({ node }: INode) => {
-                const { id, name } = node
+                const { id, name, pricing } = node
                 return (
-                    <li key={id}>
-                        <ProductsListItem
-                            id={id}
-                            name={name}
-                        />
-                    </li>
+                    <ProductsListItem
+                        key={id}
+                        id={id}
+                        name={name}
+                        pricing={pricing}
+                    />
                 )})}
         </ul>
     )

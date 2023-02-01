@@ -26,6 +26,16 @@ const GET_WATCHES = gql`
                 node {
                     id
                     name
+                    pricing {
+                        priceRange {
+                            start {
+                                gross {
+                                    amount
+                                    currency
+                                }
+                            }
+                        }
+                    }
                 }
             }
             pageInfo {
@@ -73,6 +83,7 @@ export const Index = () => {
         })
     }
 
+    // todo: fix bug, this always goes to the first page
     const onPrevPage = () => {
         const { startCursor } = products.pageInfo
 
@@ -100,6 +111,7 @@ export const Index = () => {
         setSearchQuery(e.target.value)
     }
 
+    // todo: implement cache strategy
     // todo: split components
     // todo: offload query logic
     // todo: offload gql
