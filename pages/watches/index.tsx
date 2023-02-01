@@ -54,7 +54,6 @@ export const Index = () => {
 
     const { loading, data, fetchMore } = useQuery(GET_WATCHES, {
         variables: { first: pageItemsLength, last: pageItemsLength, direction: ASC, searchQuery, after: '' },
-        notifyOnNetworkStatusChange: true,
     });
 
     useEffect(() => {
