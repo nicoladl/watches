@@ -1,14 +1,14 @@
-import { IProduct } from "@/pages/Interfaces/IProduct";
-import { Watch } from "@/pages/components/Watch";
+import {INode, IProducts} from "@/pages/Interfaces/IProduct";
+import { ProductsListItem } from "@/pages/components/ProductsListItem";
 
-export const WatchesList = ({ products }: { [key: string]: Array<IProduct> }) => {
+export const ProductsList = ({ products }: IProducts) => {
     return (
         <ul>
-            {products.map(({ node }) => {
+            {products.map(({ node }: INode) => {
                 const { id, name } = node
                 return (
                     <li key={id}>
-                        <Watch
+                        <ProductsListItem
                             id={id}
                             name={name}
                         />
