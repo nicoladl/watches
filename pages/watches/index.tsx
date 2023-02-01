@@ -101,6 +101,10 @@ export const Index = () => {
         setSearchQuery(e.target.value)
     }
 
+    // todo: split components
+    // todo: offload query logic
+    // todo: offload gql
+    // todo: figure out if I need Redux
     return (
         <>
             <button onClick={toggleDirection}>Order ASC/DESC</button><br />
