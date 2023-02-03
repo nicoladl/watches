@@ -1,17 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useRouter } from 'next/router'
-
-const GET_WATCH = gql`
-    query GetProduct($id: ID!) {
-        product(
-            id: $id,
-            channel: "default-channel"
-        ) {
-            id
-            name
-        }
-    }
-`;
+import {GET_WATCH} from "@/graphql/product/queries";
+import {ProductPrice} from "@/pages/components/ProductPrice";
+import Image from "next/image";
+import productImage from "@/pages/img/ab2030161c1a1-superocean-heritage-b20-automatic-44-soldier.png";
 
 export const Country = () => {
     const router = useRouter()
@@ -23,10 +15,16 @@ export const Country = () => {
 
     return (
         <>
-            {loading && <p>loading...</p>}
-            {!loading && <div>
-                <h1>{ data.product.name }</h1>
-            </div>}
+            {!loading ? (
+                <div>
+                    <h1>{ data.product.name }</h1>
+                    <ProductPrice pricing={data.product.pricing}/>
+                    <Image
+                        src={productImage}
+                        alt={data.product.name}
+                    />
+                </div>
+            ) : <p>loading...</p>}
         </>
     )
 }
