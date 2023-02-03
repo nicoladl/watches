@@ -1,14 +1,21 @@
 import styles from './Navigator.module.scss'
 import Image from "next/image";
 import logo from "@/img/breitling.svg";
+import Link from "next/link";
 
 export const Navigator = () => {
     return (
         <div className={styles.navigator}>
-            <Image src={logo} alt='Breiling 1864' width={100}/>
+
+            <a
+                href={'/'}
+                className={styles.brandLogo}
+            >
+                <Image src={logo} alt='Breiling 1864' width={100}/>
+            </a>
 
             <ul>
-                <li><a href='#'>watches</a></li>
+                <li><Link href='/watches'>watches</Link></li>
                 <li><a href='#'>straps</a></li>
                 <li><a href='#'>care</a></li>
                 <li><a href='#'>subscription</a></li>

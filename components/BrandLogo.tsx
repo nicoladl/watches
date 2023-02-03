@@ -4,12 +4,15 @@ import styles from './BrandLogo.module.scss'
 
 export const BrandLogo = () => {
     return (
-        <div className={styles.brandLogo}>
+        <a
+            href={'/'}
+            className={styles.brandLogo}
+        >
             <Image
                 src={logo}
                 alt='Breiling 1864'
                 width={200}
             />
-        </div>
+        </a>
     )
 }
