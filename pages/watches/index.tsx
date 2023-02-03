@@ -35,9 +35,6 @@ export const Index = () => {
     }, [loading])
 
     // todo: implement cache strategy
-    // todo: split components
-    // todo: offload query logic
-    // todo: offload gql
     // todo: figure out if I need Redux
 
     // todo: build pagination calculations
