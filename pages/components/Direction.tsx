@@ -2,14 +2,16 @@ import {useQuery} from "@apollo/client";
 import {GET_WATCHES} from "@/graphql/products/queries";
 import {useState} from "react";
 import {pageItemsLength} from "@/pages/watches";
+import {Simulate} from "react-dom/test-utils";
+import select = Simulate.select;
 
-export const directionMap = {
+const directions = {
     ASC: 'ASC',
     DESC: 'DESC',
 }
 
 export const Direction = ({ setProducts }) => {
-    const { ASC, DESC } = directionMap
+    const { ASC, DESC } = directions
     const [direction, setDirection] = useState(ASC)
 
     const { fetchMore } = useQuery(GET_WATCHES, {
@@ -28,6 +30,12 @@ export const Direction = ({ setProducts }) => {
     }
 
     return (
-        <button onClick={toggleDirection}>Order ASC/DESC</button>
+        <>
+            <select onChange={toggleDirection}>
+                {Object.values(directions).map(direction => (
+                    <option key={direction} value={direction}>{direction}</option>
+                ))}
+            </select>
+        </>
     )
 }
