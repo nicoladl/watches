@@ -5,7 +5,7 @@ import client from "@/apollo-client";
 
 import localFont from '@next/font/local'
 
-const myFont = localFont({
+const italianPlate = localFont({
     src: [
         {
             path: '../pages/font/ItalianPlateNo2-Demibold.woff2',
@@ -17,7 +17,7 @@ const myFont = localFont({
         },
         {
             path: '../pages/font/ItalianPlateNo2-Extralight.woff2',
-        },
+        }
     ]
 })
 
@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <>
           <style jsx global>{`
               :root {
-                --watches-font: ${myFont.style.fontFamily};
+                --watches-font: ${italianPlate.style.fontFamily};
               }
           `}</style>
           <ApolloProvider client={client}>

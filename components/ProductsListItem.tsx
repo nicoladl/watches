@@ -1,6 +1,6 @@
 import {IProduct} from "@/pages/Interfaces/IProduct";
-import {ProductCard} from "@/pages/components/ProductCard";
-import styles from './ProductsListItem.module.css'
+import {ProductCard} from "@/components/ProductCard";
+import styles from './ProductsListItem.module.scss'
 
 export const ProductsListItem = ({ id, name, pricing }: IProduct) => {
     return (

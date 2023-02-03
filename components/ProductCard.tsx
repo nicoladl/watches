@@ -1,11 +1,11 @@
 import {IProduct} from "@/pages/Interfaces/IProduct";
 import Image from "next/image";
 import styles from './ProductCard.module.css'
-import {ProductId} from "@/pages/components/ProductId";
-import {ProductName} from "@/pages/components/ProductName";
-import {ProductPrice} from "@/pages/components/ProductPrice";
+import {ProductId} from "@/components/ProductId";
+import {ProductName} from "@/components/ProductName";
+import {ProductPrice} from "@/components/ProductPrice";
 
-import productImage from '../img/ab2030161c1a1-superocean-heritage-b20-automatic-44-soldier.png'
+import productImage from '../pages/img/ab2030161c1a1-superocean-heritage-b20-automatic-44-soldier.png'
 
 export const ProductCard = ({ id, name, pricing }: IProduct) => {
     return (

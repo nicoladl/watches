@@ -1,0 +1,26 @@
+.productItem {
+    flex-basis: 25%;
+    min-width: 25%;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+
+    &:after {
+         content: '';
+         background-color: #dcdcdc;
+         position: absolute;
+         right: 0;
+         top: 50%;
+         width: 1px;
+         height: 25%;
+         transform: translateY(-50%);
+    }
+
+    &:nth-child(4n) {
+      &:after {
+
+      }
+    }
+}

@@ -1,5 +1,5 @@
 import {INode, IProducts} from "@/pages/Interfaces/IProduct";
-import { ProductsListItem } from "@/pages/components/ProductsListItem";
+import { ProductsListItem } from "@/components/ProductsListItem";
 import styles from './ProductsList.module.css'
 
 export const ProductsList = ({ products }: IProducts) => {

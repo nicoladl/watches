@@ -1,14 +1,17 @@
-import { ProductsList } from "@/pages/components/ProductsList";
+import { ProductsList } from "@/components/ProductsList";
 import { useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
-import {PaginationNext} from "@/pages/components/PaginationNext";
-import {PaginationPrev} from "@/pages/components/PaginationPrev";
+import {PaginationNext} from "@/components/PaginationNext";
+import {PaginationPrev} from "@/components/PaginationPrev";
 import {GET_WATCHES} from "@/graphql/products/queries";
-import {SortingContainer} from "@/pages/components/SortingContainer";
-import {Direction} from "@/pages/components/Direction";
-import {FiltersContainer} from "@/pages/components/FiltersContainer";
-import {Pagination} from "@/pages/components/Pagination";
-import {Search} from "@/pages/components/Search";
+import {SortingContainer} from "@/components/SortingContainer";
+import {Direction} from "@/components/Direction";
+import {FiltersContainer} from "@/components/FiltersContainer";
+import {Pagination} from "@/components/Pagination";
+import {Search} from "@/components/Search";
+import {Navigator} from "@/components/Navigator";
+import {BrandLogo} from "@/components/BrandLogo";
+import {Main} from "@/layouts/main";
 
 export const pageItemsLength = 28
 
@@ -39,7 +42,8 @@ export const Index = () => {
 
     // todo: build pagination calculations
     return (
-        <>
+        <Main>
+
             <FiltersContainer>
                 <SortingContainer>
                     <Direction setProducts={setProducts}/>
@@ -65,7 +69,7 @@ export const Index = () => {
                     </Pagination>
                 </>
             ) : <p>loading...</p>}
-        </>
+        </Main>
     )
 }
 
