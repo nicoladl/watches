@@ -1,4 +1,6 @@
 .filtersContainer {
     display: flex;
     justify-content: space-between;
+    background-color: #fafafa;
+    padding: 20px 40px;
 }
