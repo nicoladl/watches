@@ -1,56 +1,18 @@
 import { ProductsList } from "@/pages/components/ProductsList";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
+import {PaginationNext} from "@/pages/components/PaginationNext";
+import {PaginationPrev} from "@/pages/components/PaginationPrev";
+import {GET_WATCHES} from "@/graphql/products/queries";
+import {SortingContainer} from "@/pages/components/SortingContainer";
+import {Direction} from "@/pages/components/Direction";
+import {FiltersContainer} from "@/pages/components/FiltersContainer";
+import {Pagination} from "@/pages/components/Pagination";
+import {Search} from "@/pages/components/Search";
 
-const directionMap = {
-    ASC: 'ASC',
-    DESC: 'DESC',
-}
-const pageItemsLength = 28
-
-const GET_WATCHES = gql`
-    query GetProducts(
-        $direction: OrderDirection!,
-        $searchQuery: String!,
-        $first: Int!
-        $after: String!
-    ) {
-        products(
-            first: $first,
-            after: $after,
-            sortBy: { field: NAME, direction: $direction }
-            filter: { search: $searchQuery }
-            channel: "default-channel",
-        ) {
-            edges {
-                node {
-                    id
-                    name
-                    pricing {
-                        priceRange {
-                            start {
-                                gross {
-                                    amount
-                                    currency
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            pageInfo {
-                hasNextPage
-                hasPreviousPage
-                startCursor
-                endCursor
-            }
-        }
-    }
-`;
+export const pageItemsLength = 28
 
 export const Index = () => {
-    const { ASC, DESC } = directionMap
-    const [direction, setDirection] = useState(ASC)
     const [products, setProducts] = useState({
         edges: [],
         pageInfo: {
@@ -58,12 +20,12 @@ export const Index = () => {
             startCursor: '',
             hasNextPage: false,
             hasPreviousPage: false,
-        }
+        },
+        totalCount: 0,
     })
-    const [searchQuery, setSearchQuery] = useState('')
 
-    const { loading, data, fetchMore } = useQuery(GET_WATCHES, {
-        variables: { first: pageItemsLength, last: pageItemsLength, direction: ASC, searchQuery, after: '' },
+    const { loading, data } = useQuery(GET_WATCHES, {
+        variables: { first: pageItemsLength, last: pageItemsLength, direction: 'ASC', searchQuery: '', after: '', before: '' },
     });
 
     useEffect(() => {
@@ -72,59 +34,38 @@ export const Index = () => {
         }
     }, [loading])
 
-    const onNextPage = () => {
-        const { endCursor } = products.pageInfo
-
-        fetchMore({
-            variables: { after: endCursor },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
-        })
-    }
-
-    // todo: fix bug, this always goes to the first page
-    const onPrevPage = () => {
-        const { startCursor } = products.pageInfo
-
-        fetchMore({
-            variables: { before: startCursor },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
-        })
-    }
-
-    const toggleDirection = () => {
-        setDirection(direction === ASC ? DESC : ASC)
-
-        fetchMore({
-            variables: { direction },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
-        })
-    }
-
-    const onInputChange = (e: any) => {
-        // todo: debounce this
-        setSearchQuery(e.target.value)
-    }
-
     // todo: implement cache strategy
     // todo: split components
     // todo: offload query logic
     // todo: offload gql
     // todo: figure out if I need Redux
+
+    // todo: build pagination calculations
     return (
         <>
-            <button onClick={toggleDirection}>Order ASC/DESC</button><br />
-            <input onChange={onInputChange}/>
+            <FiltersContainer>
+                <SortingContainer>
+                    <Direction setProducts={setProducts}/>
+                </SortingContainer>
+
+                <Search setProducts={setProducts} />
+            </FiltersContainer>
+
             {!loading ? (
                 <>
                     <ProductsList products={products.edges}/>
-                    <button disabled={!products.pageInfo.hasPreviousPage} onClick={onPrevPage}>prev page</button>
-                    <button disabled={!products.pageInfo.hasNextPage} onClick={onNextPage}>next page</button>
+                    <Pagination>
+                        <PaginationPrev
+                            hasPreviousPage={products.pageInfo.hasPreviousPage}
+                            startCursor={products.pageInfo.startCursor}
+                            setProducts={setProducts}
+                        />
+                        <PaginationNext
+                            hasNextPage={products.pageInfo.hasNextPage}
+                            endCursor={products.pageInfo.endCursor}
+                            setProducts={setProducts}
+                        />
+                    </Pagination>
                 </>
             ) : <p>loading...</p>}
         </>

@@ -1,0 +1,7 @@
+.paginationButton {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    padding: 20px;
+}
