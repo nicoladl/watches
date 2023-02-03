@@ -1,4 +1,4 @@
-import {INode, IProducts} from "@/pages/Interfaces/IProduct";
+import {INode, IProducts} from "@/Interfaces/IProduct";
 import { ProductsListItem } from "@/components/ProductsListItem";
 import styles from './ProductsList.module.css'
 

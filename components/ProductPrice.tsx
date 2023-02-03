@@ -1,4 +1,4 @@
-import { IProductPricing } from "@/pages/Interfaces/IProduct";
+import { IProductPricing } from "@/Interfaces/IProduct";
 import styles from './ProductPrice.module.css'
 
 export const ProductPrice = ({ pricing }: { [key: string]: IProductPricing }) => {

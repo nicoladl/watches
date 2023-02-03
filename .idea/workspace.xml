@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="33f9c501-d063-457c-84a7-c65e5b53f2ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/ProductsListItem.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Interfaces/IPost.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/posts.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/Posts.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Direction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Direction.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/FiltersContainer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/FiltersContainer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/FiltersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FiltersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Pagination.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pagination.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/PaginationButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/PaginationButton.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/PaginationNext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/PaginationNext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/PaginationPrev.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/PaginationPrev.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductCard.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductCard.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductId.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductId.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductId.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductId.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductName.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductName.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductName.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductName.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductPrice.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductPrice.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductPrice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductPrice.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductsList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductsList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductsListItem.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ProductsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductsListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/SortingContainer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortingContainer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/SortingContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/SortingContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/watches/[id].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/watches/[id].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/watches/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/watches/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +65,18 @@
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "watcher.settings",
     "ts.external.directory.path": "/Users/nicoladelazzari/watches/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pages/countries" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/graphql" />
+      <recent name="$PROJECT_DIR$/pages/countries" />
     </key>
   </component>
   <component name="RunManager">

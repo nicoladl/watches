@@ -1,4 +1,4 @@
-import {IProduct} from "@/pages/Interfaces/IProduct";
+import {IProduct} from "@/Interfaces/IProduct";
 import {ProductCard} from "@/components/ProductCard";
 import styles from './ProductsListItem.module.scss'
 

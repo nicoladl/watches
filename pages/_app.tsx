@@ -8,15 +8,15 @@ import localFont from '@next/font/local'
 const italianPlate = localFont({
     src: [
         {
-            path: '../pages/font/ItalianPlateNo2-Demibold.woff2',
+            path: '../font/ItalianPlateNo2-Demibold.woff2',
             weight: '700',
         },
         {
-            path: '../pages/font/ItalianPlateNo2-Regular.woff2',
+            path: '../font/ItalianPlateNo2-Regular.woff2',
             weight: '400',
         },
         {
-            path: '../pages/font/ItalianPlateNo2-Extralight.woff2',
+            path: '../font/ItalianPlateNo2-Extralight.woff2',
         }
     ]
 })

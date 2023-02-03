@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import {GET_WATCH} from "@/graphql/product/queries";
 import {ProductPrice} from "@/components/ProductPrice";
 import Image from "next/image";
-import productImage from "@/pages/img/ab2030161c1a1-superocean-heritage-b20-automatic-44-soldier.png";
+import productImage from "@/img/ab2030161c1a1-superocean-heritage-b20-automatic-44-soldier.png";
 import {Main} from "@/layouts/main";
 
 export const Country = () => {

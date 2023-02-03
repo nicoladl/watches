@@ -1,4 +1,4 @@
-import logo from "@/pages/img/breitling.svg";
+import logo from "@/img/breitling.svg";
 import Image from "next/image";
 import styles from './BrandLogo.module.scss'
 
