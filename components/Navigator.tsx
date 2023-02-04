@@ -5,24 +5,23 @@ import Link from "next/link";
 
 export const Navigator = () => {
     return (
-        <div className={styles.navigator}>
-
-            <a
-                href={'/'}
+        <header className={styles.navigator}>
+            <Link
                 className={styles.brandLogo}
+                href={'/watches'}
             >
                 <Image src={logo} alt='Breiling 1864' width={100}/>
-            </a>
+            </Link>
 
-            <ul>
-                <li><Link href='/watches'>watches</Link></li>
-                <li><a href='#'>straps</a></li>
-                <li><a href='#'>care</a></li>
-                <li><a href='#'>subscription</a></li>
-                <li><a href='#'>service</a></li>
-                <li><a href='#'>store</a></li>
-                <li><a href='#'>about</a></li>
-            </ul>
-        </div>
+            <nav className={styles.nav}>
+                <Link className={styles.navItem} href='/watches'>watches</Link>
+                <a className={styles.navItem} href='#'>straps</a>
+                <a className={styles.navItem} href='#'>care</a>
+                <a className={styles.navItem} href='#'>subscription</a>
+                <a className={styles.navItem} href='#'>service</a>
+                <a className={styles.navItem} href='#'>store</a>
+                <a className={styles.navItem} href='#'>about</a>
+            </nav>
+        </header>
     )
 }

@@ -3,10 +3,10 @@ import {Navigator} from "@/components/Navigator";
 
 export const Main = ({ children }) => {
     return (
-        <div>
+        <section>
             <BrandLogo />
             <Navigator />
             {children}
-        </div>
+        </section>
     )
 }

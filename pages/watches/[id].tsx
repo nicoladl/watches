@@ -20,7 +20,7 @@ export const Country = () => {
     return (
         <Main>
             {!loading ? (
-                <div>
+                <article>
                     <h1>
                         <ProductName name={data.product.name} />
                     </h1>
@@ -29,7 +29,7 @@ export const Country = () => {
                         src={data.product.name.length % 2 == 0 ? productImageEven : productImageOdd}
                         alt={data.product.name}
                     />
-                </div>
+                </article>
             ) : <p>loading...</p>}
         </Main>
     )

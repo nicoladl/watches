@@ -11,7 +11,7 @@ import productImageOdd from '../img/ab01383b1g1p1-navitimer-b01-chronograph-43-b
 export const ProductCard = ({ id, name, pricing }: IProduct) => {
     return (
         <a href={`/watches/${id}`} title={name}>
-            <div className={styles.productCard}>
+            <article className={styles.productCard}>
                 <Image
                     className={styles.productCardImage}
                     src={name.length % 2 == 0 ? productImageEven : productImageOdd}
@@ -20,7 +20,7 @@ export const ProductCard = ({ id, name, pricing }: IProduct) => {
                 <ProductId id={id}/>
                 <h3><ProductName name={name}/></h3>
                 <ProductPrice pricing={pricing} />
-            </div>
+            </article>
         </a>
     )
 }
