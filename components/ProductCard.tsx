@@ -1,6 +1,6 @@
 import {IProduct} from "@/Interfaces/IProduct";
 import Image from "next/image";
-import styles from './ProductCard.module.css'
+import styles from './ProductCard.module.scss'
 import {ProductId} from "@/components/ProductId";
 import {ProductName} from "@/components/ProductName";
 import {ProductPrice} from "@/components/ProductPrice";
@@ -12,7 +12,6 @@ export const ProductCard = ({ id, name, pricing, children }: IProduct) => {
     return (
         <article className={styles.productCard}>
             <Image
-                className={styles.productCardImage}
                 src={name.length % 2 == 0 ? productImageEven : productImageOdd}
                 alt={name}
             />

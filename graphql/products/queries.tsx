@@ -72,18 +72,32 @@ export const GET_WATCHES = gql`
     query GetProducts(
         $direction: OrderDirection!,
         $searchQuery: String!,
+        $stockAvailability: StockAvailability,
         $first: Int!
+        $lte: Float
+        $gte: Float
     ) {
         products(
             first: $first,
             sortBy: { field: NAME, direction: $direction }
-            filter: { search: $searchQuery }
+            filter: {
+                search: $searchQuery,
+                stockAvailability: $stockAvailability,
+                price: {
+                    lte: $lte,
+                    gte: $gte,
+                }
+            }
             channel: "default-channel",
         ) {
             edges {
                 node {
                     id
                     name
+                    variants {
+                        id
+                        name
+                    }
                     pricing {
                         priceRange {
                             start {

@@ -10,12 +10,24 @@ const directions = {
     DESC: 'DESC',
 }
 
+const directionsLabels = {
+    ASC: 'Ascending',
+    DESC: 'Descending',
+}
+
 export const Direction = ({ setProducts }) => {
     const { ASC, DESC } = directions
     const [direction, setDirection] = useState(ASC)
 
     const { fetchMore } = useQuery(GET_WATCHES, {
-        variables: { first: pageItemsLength, last: pageItemsLength, direction: 'ASC', searchQuery: '', after: '', before: '' },
+        variables: {
+            first: pageItemsLength,
+            last: pageItemsLength,
+            searchQuery: '',
+            after: '',
+            before: '',
+            direction: 'ASC'
+        },
     });
     const toggleDirection = () => {
         const newDirection = direction === ASC ? DESC : ASC
@@ -33,7 +45,7 @@ export const Direction = ({ setProducts }) => {
         <>
             <select onChange={toggleDirection}>
                 {Object.values(directions).map(direction => (
-                    <option key={direction} value={direction}>{direction}</option>
+                    <option key={direction} value={direction}>{directionsLabels[direction]}</option>
                 ))}
             </select>
         </>

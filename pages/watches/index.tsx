@@ -12,6 +12,8 @@ import {Search} from "@/components/Search";
 import {Navigator} from "@/components/Navigator";
 import {BrandLogo} from "@/components/BrandLogo";
 import {Main} from "@/layouts/main";
+import {Availability} from "@/components/Availability";
+import {PriceRange} from "@/components/PriceRange";
 
 export const pageItemsLength = 28
 
@@ -47,6 +49,7 @@ export const Index = () => {
             <FiltersContainer>
                 <SortingContainer>
                     <Direction setProducts={setProducts}/>
+                    <Availability setProducts={setProducts}/>
                 </SortingContainer>
 
                 <Search setProducts={setProducts} />

@@ -1,0 +1,17 @@
+.productCard {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        transition: 5s;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 10s;
+        }
+    }
+}

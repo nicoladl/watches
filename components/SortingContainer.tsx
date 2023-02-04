@@ -1,4 +1,4 @@
-import styles from './SortingContainer.module.css'
+import styles from './SortingContainer.module.scss'
 
 export const SortingContainer = ({ children }) => {
     return (
