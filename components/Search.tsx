@@ -1,24 +1,34 @@
-import {useQuery} from "@apollo/client";
+import {useLazyQuery} from "@apollo/client";
 import {pageItemsLength} from "@/pages/watches";
 import {GET_WATCHES} from "@/graphql/products/queries";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export const Search = ({ setProducts }) => {
     const [searchQuery, setSearchQuery] = useState('')
-
-    const { loading, data, fetchMore } = useQuery(GET_WATCHES, {
-        variables: { first: pageItemsLength, last: pageItemsLength, direction: 'ASC', searchQuery, after: '', before: '' },
-    });
+    const [getProducts, { called, loading, data }] = useLazyQuery(GET_WATCHES);
 
     const onInputChange = (event: any) => {
-        fetchMore({
-            variables: { searchQuery: event.target.value },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
-        })
         setSearchQuery(event.target.value)
+
+        // todo: refactor variables
+        getProducts({
+            variables: {
+                first: pageItemsLength,
+                last: pageItemsLength,
+                direction: 'ASC',
+                searchQuery: event.target.value,
+                after: '',
+                before: '',
+                stockAvailability: 'IN_STOCK'
+            },
+        })
     }
+
+    useEffect(() => {
+        if (called && !loading) {
+            setProducts(data.products)
+        }
+    }, [called, loading])
 
     return (
         <input

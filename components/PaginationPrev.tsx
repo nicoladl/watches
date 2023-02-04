@@ -1,20 +1,32 @@
-import {useQuery} from "@apollo/client";
+import {useLazyQuery} from "@apollo/client";
 import {pageItemsLength} from "@/pages/watches";
 import {GET_PREV_WATCHES} from "@/graphql/products/queries";
+import {useEffect} from "react";
 import styles from './PaginationButton.module.css'
 
 export const PaginationPrev = ({ hasPreviousPage, startCursor, setProducts }) => {
-    const { loading, data, fetchMore } = useQuery(GET_PREV_WATCHES, {
-        variables: { last: pageItemsLength, before: startCursor },
-    });
+    const [getProducts, { called, loading, data }] = useLazyQuery(GET_PREV_WATCHES);
+
     const onPrevPage = () => {
-        fetchMore({
-            variables: { before: startCursor },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
+        // todo: refactor variables
+        getProducts({
+            variables: {
+                first: pageItemsLength,
+                last: pageItemsLength,
+                direction: 'ASC',
+                searchQuery: '',
+                after: '',
+                before: startCursor,
+                stockAvailability: 'IN_STOCK'
+            },
         })
     }
+
+    useEffect(() => {
+        if (called && !loading) {
+            setProducts(data.products)
+        }
+    }, [called, loading])
 
     return (
         <button

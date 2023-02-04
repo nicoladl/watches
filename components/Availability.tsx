@@ -1,6 +1,6 @@
-import {useQuery} from "@apollo/client";
+import {useLazyQuery} from "@apollo/client";
 import {GET_WATCHES} from "@/graphql/products/queries";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {pageItemsLength} from "@/pages/watches";
 import {Simulate} from "react-dom/test-utils";
 import select = Simulate.select;
@@ -19,28 +19,31 @@ export const Availability = ({ setProducts }) => {
     const { IN_STOCK, OUT_OF_STOCK } = availabilities
     const [availability, setAvailability] = useState(IN_STOCK)
 
-    const { fetchMore } = useQuery(GET_WATCHES, {
-        variables: {
-            first: pageItemsLength,
-            last: pageItemsLength,
-            direction: 'ASC',
-            searchQuery: '',
-            after: '',
-            before: '',
-            stockAvailability: IN_STOCK
-        },
-    });
-    const toggleAvailability = () => {
-        const newAvailability = availability === IN_STOCK ? OUT_OF_STOCK : IN_STOCK
+    const [getProducts, { called, loading, data }] = useLazyQuery(GET_WATCHES);
 
-        fetchMore({
-            variables: { stockAvailability: newAvailability },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
+    const toggleAvailability = () => {
+        const stockAvailability = availability === IN_STOCK ? OUT_OF_STOCK : IN_STOCK
+
+        // todo: refactor variables
+        getProducts({
+            variables: {
+                first: pageItemsLength,
+                last: pageItemsLength,
+                direction: 'ASC',
+                searchQuery: '',
+                after: '',
+                before: '',
+                stockAvailability: stockAvailability
+            },
         })
-        setAvailability(newAvailability)
+        setAvailability(stockAvailability)
     }
+
+    useEffect(() => {
+        if (called && !loading) {
+            setProducts(data.products)
+        }
+    }, [called, loading])
 
     return (
         <>

@@ -9,11 +9,8 @@ import {Direction} from "@/components/Direction";
 import {FiltersContainer} from "@/components/FiltersContainer";
 import {Pagination} from "@/components/Pagination";
 import {Search} from "@/components/Search";
-import {Navigator} from "@/components/Navigator";
-import {BrandLogo} from "@/components/BrandLogo";
 import {Main} from "@/layouts/main";
 import {Availability} from "@/components/Availability";
-import {PriceRange} from "@/components/PriceRange";
 import {ProductsSwitch} from "@/components/ProductsSwitch";
 import {Loading} from "@/components/Loading";
 

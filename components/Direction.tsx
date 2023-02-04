@@ -1,6 +1,6 @@
-import {useQuery} from "@apollo/client";
+import {useLazyQuery} from "@apollo/client";
 import {GET_WATCHES} from "@/graphql/products/queries";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {pageItemsLength} from "@/pages/watches";
 import {Simulate} from "react-dom/test-utils";
 import select = Simulate.select;
@@ -19,27 +19,31 @@ export const Direction = ({ setProducts }) => {
     const { ASC, DESC } = directions
     const [direction, setDirection] = useState(ASC)
 
-    const { fetchMore } = useQuery(GET_WATCHES, {
-        variables: {
-            first: pageItemsLength,
-            last: pageItemsLength,
-            searchQuery: '',
-            after: '',
-            before: '',
-            direction: 'ASC'
-        },
-    });
+    const [getProducts, { called, loading, data }] = useLazyQuery(GET_WATCHES);
+
     const toggleDirection = () => {
         const newDirection = direction === ASC ? DESC : ASC
 
-        fetchMore({
-            variables: { direction: newDirection },
-            updateQuery: (previousQueryResult, { fetchMoreResult }) => {
-                setProducts(fetchMoreResult.products)
-            }
+        // todo: refactor variables
+        getProducts({
+            variables: {
+                first: pageItemsLength,
+                last: pageItemsLength,
+                direction: newDirection,
+                searchQuery: '',
+                after: '',
+                before: '',
+                stockAvailability: 'IN_STOCK'
+            },
         })
         setDirection(newDirection)
     }
+
+    useEffect(() => {
+        if (called && !loading) {
+            setProducts(data.products)
+        }
+    }, [called, loading])
 
     return (
         <>
