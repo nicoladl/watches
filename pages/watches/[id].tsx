@@ -8,7 +8,7 @@ import {ProductCard} from "@/components/ProductCard";
 import {BuyAction} from "@/components/BuyAction";
 import {HeroContent} from "@/components/HeroContent";
 import {ProductNameLarge} from "@/components/ProductNameLarge";
-
+import {Loading} from "@/components/Loading";
 
 export const Country = () => {
     const router = useRouter()
@@ -44,7 +44,7 @@ export const Country = () => {
                         </ProductContainer>
                     </ProductHero>
                 </article>
-            ) : <p>loading...</p>}
+            ) : <Loading/>}
         </Main>
     )
 }

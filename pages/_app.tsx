@@ -3,6 +3,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "@/apollo-client";
 import '@/styles/globals.css'
 import '@/styles/select.css'
+import '@/styles/typography.css'
 
 import localFont from '@next/font/local'
 
