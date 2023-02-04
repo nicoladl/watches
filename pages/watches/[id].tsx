@@ -7,6 +7,7 @@ import {Main} from "@/layouts/main";
 
 import productImageEven from "@/img/a233112a1a1x1-top-time-deus-soldier.png";
 import productImageOdd from "@/img/ab01383b1g1p1-navitimer-b01-chronograph-43-boeing-747-soldier.png";
+import {ProductName} from "@/components/ProductName";
 
 export const Country = () => {
     const router = useRouter()
@@ -20,7 +21,9 @@ export const Country = () => {
         <Main>
             {!loading ? (
                 <div>
-                    <h1>{ data.product.name }</h1>
+                    <h1>
+                        <ProductName name={data.product.name} />
+                    </h1>
                     <ProductPrice pricing={data.product.pricing}/>
                     <Image
                         src={data.product.name.length % 2 == 0 ? productImageEven : productImageOdd}

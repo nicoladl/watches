@@ -1,6 +1,7 @@
 import {INode, IProducts} from "@/Interfaces/IProduct";
 import { ProductsListItem } from "@/components/ProductsListItem";
 import styles from './ProductsList.module.css'
+import {ProductCard} from "@/components/ProductCard";
 
 export const ProductsList = ({ products }: IProducts) => {
     return (
@@ -8,12 +9,13 @@ export const ProductsList = ({ products }: IProducts) => {
             {products.map(({ node }: INode) => {
                 const { id, name, pricing } = node
                 return (
-                    <ProductsListItem
-                        key={id}
-                        id={id}
-                        name={name}
-                        pricing={pricing}
-                    />
+                    <ProductsListItem key={id}>
+                        <ProductCard
+                            id={id}
+                            name={name}
+                            pricing={pricing}
+                        />
+                    </ProductsListItem>
                 )})}
         </ul>
     )

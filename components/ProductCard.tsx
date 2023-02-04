@@ -18,7 +18,7 @@ export const ProductCard = ({ id, name, pricing }: IProduct) => {
                     alt={name}
                 />
                 <ProductId id={id}/>
-                <ProductName name={name}/>
+                <h3><ProductName name={name}/></h3>
                 <ProductPrice pricing={pricing} />
             </div>
         </a>

@@ -20,7 +20,7 @@
 
     &:nth-child(4n) {
       &:after {
-
+        content: none;
       }
     }
 }
