@@ -14,6 +14,8 @@ import {BrandLogo} from "@/components/BrandLogo";
 import {Main} from "@/layouts/main";
 import {Availability} from "@/components/Availability";
 import {PriceRange} from "@/components/PriceRange";
+import {ProductsSwitch} from "@/components/ProductsSwitch";
+import {Loading} from "@/components/Loading";
 
 export const pageItemsLength = 28
 
@@ -57,21 +59,23 @@ export const Index = () => {
 
             {!loading ? (
                 <>
-                    <ProductsList products={products.edges}/>
-                    <Pagination>
-                        <PaginationPrev
-                            hasPreviousPage={products.pageInfo.hasPreviousPage}
-                            startCursor={products.pageInfo.startCursor}
-                            setProducts={setProducts}
-                        />
-                        <PaginationNext
-                            hasNextPage={products.pageInfo.hasNextPage}
-                            endCursor={products.pageInfo.endCursor}
-                            setProducts={setProducts}
-                        />
-                    </Pagination>
+                    <ProductsSwitch products={products.edges}>
+                        <ProductsList products={products.edges}/>
+                        <Pagination>
+                            <PaginationPrev
+                                hasPreviousPage={products.pageInfo.hasPreviousPage}
+                                startCursor={products.pageInfo.startCursor}
+                                setProducts={setProducts}
+                            />
+                            <PaginationNext
+                                hasNextPage={products.pageInfo.hasNextPage}
+                                endCursor={products.pageInfo.endCursor}
+                                setProducts={setProducts}
+                            />
+                        </Pagination>
+                    </ProductsSwitch>
                 </>
-            ) : <p>loading...</p>}
+            ) : <Loading />}
         </Main>
     )
 }
