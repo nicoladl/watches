@@ -9,7 +9,7 @@ export const ProductsList = ({ products }: IProducts) => {
             {products.map(({ node }: INode) => {
                 const { id, name, pricing } = node
                 return (
-                    <ProductsListItem key={id}>
+                    <ProductsListItem key={id} id={id} name={name}>
                         <ProductCard
                             id={id}
                             name={name}
