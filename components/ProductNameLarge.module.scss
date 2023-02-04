@@ -1,0 +1,15 @@
+.productNameLarge {
+    font-family: var(--watches-font);
+    font-weight: 700;
+    color: #111820;
+    text-transform: uppercase;
+    font-size: 32px;
+    line-height: 0.9em;
+
+    text-align: center;
+    padding: 2px 0;
+
+    span:first-child {
+        color: #ffc62d;
+    }
+}

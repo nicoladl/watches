@@ -1,17 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from 'next/router'
 import {GET_WATCH} from "@/graphql/product/queries";
-import {ProductPrice} from "@/components/ProductPrice";
-import Image from "next/image";
 import {Main} from "@/layouts/main";
-
-import productImageEven from "@/img/a233112a1a1x1-top-time-deus-soldier.png";
-import productImageOdd from "@/img/ab01383b1g1p1-navitimer-b01-chronograph-43-boeing-747-soldier.png";
-import {ProductName} from "@/components/ProductName";
 import {ProductHero} from "@/components/ProductHero";
 import {ProductContainer} from "@/components/ProductContainer";
 import {ProductCard} from "@/components/ProductCard";
 import {BuyAction} from "@/components/BuyAction";
+import {HeroContent} from "@/components/HeroContent";
+import {ProductNameLarge} from "@/components/ProductNameLarge";
+
 
 export const Country = () => {
     const router = useRouter()
@@ -26,20 +23,23 @@ export const Country = () => {
             {!loading ? (
                 <article>
                     <ProductHero>
-                        <div>
+                        <HeroContent>
                             <h1>
-                                <ProductName name={data.product.name} />
+                                <ProductNameLarge name={data.product.name} />
                             </h1>
-                            <ProductPrice pricing={data.product.pricing}/>
-                        </div>
+                            <div>
+                                <h4>Breitling's colorful tribute to the original superocean</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum arcu ac odio suscipit, non sollicitudin turpis cursus.</p>
+                            </div>
+                        </HeroContent>
 
-                        <ProductContainer>
+                        <ProductContainer style={{ width: '40%' }}>
                             <ProductCard
                                 id={data.product.id}
                                 name={data.product.name}
                                 pricing={data.product.pricing}
                             >
-                                <BuyAction/>
+                                <BuyAction id={data.product.id}/>
                             </ProductCard>
                         </ProductContainer>
                     </ProductHero>

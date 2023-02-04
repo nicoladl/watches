@@ -1,7 +1,12 @@
-import styles from './ProductHero.module.scss'
+import styles from './BuyAction.module.scss'
+import {IProductId} from "@/Interfaces/IProduct";
 
-export const BuyAction = () => {
+export const BuyAction = ({ id }: IProductId) => {
+    const buyAction = () => {
+        console.log(`buy product ${id}`)
+    }
+
     return (
-        <button className={styles.productHero}>Add to bag</button>
+        <button className={styles.buyAction} onClick={buyAction}>Add to bag</button>
     )
 }

@@ -1,0 +1,38 @@
+.heroContent {
+  background-image: url('../img/warranty-care@2x.jpeg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+
+  h1 {
+    margin-left: 65%;
+    text-align: right;
+  }
+
+  div {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+
+    background-color: rgba(255, 198, 45, 0.75);
+    padding: 40px;
+    width: 50%;
+    box-sizing: border-box;
+
+    h4 {
+      font-family: var(--watches-font);
+      font-weight: 700;
+      font-size: 24px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+    }
+
+    p {
+      font-family: var(--watches-font);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+  }
+}
