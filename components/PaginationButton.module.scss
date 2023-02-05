@@ -1,0 +1,22 @@
+@import '../styles/variables.scss';
+
+.paginationButton {
+  font-family: var(--watches-font);
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  background-color: $breitling-color;
+  color: #000;
+  border: 0;
+  padding: 8px 35px;
+  margin: 20px 8px;
+
+  transition: color 0.15s;
+
+  &:hover {
+    transition: color 0.3s;
+    color: #fff;
+  }
+}

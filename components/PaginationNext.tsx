@@ -2,7 +2,7 @@ import {useLazyQuery} from "@apollo/client";
 import {pageItemsLength} from "@/pages/watches";
 import {GET_NEXT_WATCHES} from "@/graphql/products/queries";
 import {useEffect} from "react";
-import styles from './PaginationButton.module.css'
+import styles from './PaginationButton.module.scss'
 
 export const PaginationNext = ({ hasNextPage, endCursor, setProducts }) => {
     const [getProducts, { called, loading, data }] = useLazyQuery(GET_NEXT_WATCHES);
