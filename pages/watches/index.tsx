@@ -39,8 +39,7 @@ export const Index = () => {
     }, [loading])
 
     // todo: implement cache strategy
-    // todo: figure out if I need Redux
-
+    // todo: use context to store query variables
     // todo: build pagination calculations
     return (
         <Main>
