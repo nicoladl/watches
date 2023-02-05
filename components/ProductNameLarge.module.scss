@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .productNameLarge {
     font-weight: 700;
     text-transform: uppercase;
@@ -8,6 +10,6 @@
     padding: 2px 0;
 
     span:first-child {
-        color: #ffc62d;
+        color: $breitling-color;
     }
 }

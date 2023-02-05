@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .navigator {
     display: flex;
     flex-direction: row;
@@ -26,7 +28,7 @@
 
             &:hover {
                 transition: color 0.3s;
-                color: #ffc62d;
+                color: $breitling-color;
             }
         }
     }

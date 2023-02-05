@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .buyAction {
   font-family: var(--watches-font);
   font-weight: 700;
@@ -5,7 +7,7 @@
   text-transform: uppercase;
   cursor: pointer;
   
-  background-color: #ffc62d;
+  background-color: $breitling-color;
   color: #000;
   border: 0;
   padding: 16px 50px;
