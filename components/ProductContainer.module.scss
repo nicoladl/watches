@@ -1,5 +1,12 @@
+@import '../styles/variables.scss';
+
 .productHero {
   width: 50%;
+
+  @media only screen and (max-width: $screen-md-min) {
+    order: -1;
+    width: 100%;
+  }
 
   img {
     width: 100%;

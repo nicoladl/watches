@@ -33,7 +33,7 @@ export const Country = () => {
                             </div>
                         </HeroContent>
 
-                        <ProductContainer style={{ width: '40%' }}>
+                        <ProductContainer>
                             <ProductCard
                                 id={data.product.id}
                                 name={data.product.name}

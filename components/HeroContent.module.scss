@@ -1,36 +1,47 @@
-.heroContent {
-  background-image: url('../img/warranty-care@2x.jpeg');
-  background-size: 60%;
-  background-repeat: no-repeat;
-  width: 100%;
-  position: relative;
+@import '../styles/variables.scss';
 
-  h1 {
-    margin-left: 65%;
-    text-align: right;
+.heroContent {
+  p, h4 {
+    padding-top: 20px;
   }
 
-  div {
-    position: absolute;
-    bottom: -40px;
-    right: 0;
+  h4 {
+    font-weight: 700;
+    font-size: 24px;
+  }
 
-    background-color: rgba(255, 198, 45, 0.75);
-    padding: 40px;
-    width: 50%;
-    box-sizing: border-box;
+  @media only screen and (min-width: $screen-md-min) {
+    background-image: url('../img/warranty-care@2x.jpeg');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
 
-    h4 {
-      font-weight: 700;
-      font-size: 24px;
-      text-transform: uppercase;
-      padding-bottom: 20px;
+    h1 {
+      margin-left: 65%;
+      text-align: right;
     }
 
-    p {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.5em;
+    div {
+      position: absolute;
+      bottom: -40px;
+      right: 0;
+
+      background-color: rgba(255, 198, 45, 0.75);
+      padding: 40px;
+      width: 50%;
+      box-sizing: border-box;
+
+      h4 {
+        text-transform: uppercase;
+        padding-bottom: 20px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5em;
+      }
     }
   }
 }
