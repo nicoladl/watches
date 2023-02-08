@@ -1,4 +1,4 @@
-import logo from "@/img/breitling.svg";
+import logo from "@/img/brandLogo.png";
 import Image from "next/image";
 import styles from './BrandLogo.module.scss'
 import Link from "next/link";
@@ -11,7 +11,7 @@ export const BrandLogo = () => {
         >
             <Image
                 src={logo}
-                alt='Breiling 1864'
+                alt='Brand name'
                 width={200}
             />
         </Link>

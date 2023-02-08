@@ -28,7 +28,7 @@ export const Country = () => {
                                 <ProductNameLarge name={data.product.name} />
                             </h1>
                             <div>
-                                <h4>Breitling's colorful tribute to the original superocean</h4>
+                                <h4>Brand name colorful tribute to the original superocean</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum arcu ac odio suscipit, non sollicitudin turpis cursus.</p>
                             </div>
                         </HeroContent>
